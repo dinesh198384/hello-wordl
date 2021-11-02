@@ -28,10 +28,4 @@ jobs:
     - name: Build and Push Docker Image
       run: |
           docker build . --file ./dockerfile -t hellowordl-repo:hellowordlimg$(echo ${GITHUB_SHA} | cut -c1-8)
-           uses: mr-smithers-excellent/docker-build-push@v5
-           with:
-            image: dinesh198384/hello-demo
-            registry: docker.io
-            username: ${{ secrets.DOCKER_USERNAME }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
-        
+ 
